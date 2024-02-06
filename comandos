@@ -1,0 +1,27 @@
+find / -type f -perm -4000 2>/dev/null # Quiero encontrar archivoz desde la raiz que tengan el permiso SUID
+    -name    \*omb\*.sh # Busca nombre.sh
+    -perm
+    -user
+    -group
+    -type
+        f
+        d
+    -writable
+    -executable
+    -readable
+    -size 1333c # Busca archivos con tamaño de 1333 bytes
+
+hostname -I # Ver tu IP
+ifconfig # Ver interfaces de como eth0 
+
+netstat -nat # Ver puertos
+ss -nltp # Ver puertos
+
+lsof -i:22 # Que servicio corre bajo el puerto 22
+
+file nombre # Dice el tipo de archivo
+
+strings archivo # Visualizar cadenas legibles en un archivo
+
+7z l archivo # Al pasar el archivo comprimido detecta que es lo que hay dentro y que vas a descomprimir
+7z x archivo # Extrae el contenido independientemente del tipo de comprimido

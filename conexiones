@@ -1,0 +1,26 @@
+SSH
+ssh usuario@IP -p puerto
+sshpass -p 'contraseña' ssh usuario@IP -p puerto
+export TERM=xterm para cambiar la terminal y permitir usar control + l por el error de la kitty
+
+~/.ssh
+sudo systemctl start sshd # Inicia el servicio ssh
+ssh cephei@127.0.0.1
+sudo systemctl stop sshd # Cierra el servicio
+
+
+CONEXION SIN CONTRASEÑA
+ssh-keygen # Crea una clave publica y una clave privada
+# Clave publica
+cp id_rsa.pub authorized_keys # Si la clave publica se hace autorizada al tratar de conectarte no te pide contraseña
+    # En resumen, desde tu equipo creas tus claves, haces la publica autorizada dentro de la ruta del usuario al que quieres conectarte /home/usuario/.ssh
+
+# Clave privada
+ssh-copy-id -i id_rsa usuario@127.0.0.1 # Hace que la clave privada se haga autorizada
+# La clave privada la compartes con quien quieres que se conecte
+ssh -i id_rsa usuario@127.0.0.1 # De esa forma con la key privada que recibió es como el usuario se conecta
+
+NETCAT
+# Permite conectarte a traves de un puerto
+nc IP PUERTO
+nc 127.0.0.1 30000

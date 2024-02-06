@@ -1,0 +1,9 @@
+wich whoami
+command -v whoami # Es una alternativa cuando el comando wich no existe
+
+/etc/group # Aqui se encuentran todos los grupos que se reportan cuando haces "id" en la terminal
+/etc/passwd # Lista usuarios, directorio personal, tipo de shell
+/etc/shells # Se ven los tipos de shells
+/etc/shadow # Se ven contraseñas
+/etc/login.defs | grep "ENCRYPT_METHOD" # Dice con que metodo esta encriptada /etc/shadow 
+/proc/net/tcp # Se encuentran los puertos en hexadecimal

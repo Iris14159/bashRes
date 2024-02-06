@@ -1,0 +1,83 @@
+____Variables de estado
+PATH: Nos dice el PATH
+TERM: Dice el tipo de terminal
+?: Dice si la ejecución del ultimo comando fue exitosa, por ejemplo, 0 si fue exitosa, 127 si el comando no existe...
+
+!$ permite usar la ultima ruta escrita sin tener que escribirla de nuevo
+
+Oneliner
+Podemos ejecutar varios comandos en una linea poniendo ; entre comandos, por ejemplo:
+whoami; ls; id;
+
+La diferencia con el and y el or, es que utiliza los codigos de estado, por ejemplo
+whoam && ls 
+No se ejecuta ls porque whoam da un codigo de error, para este caso se utilizaria un or ||
+
+
+STDERR y STDOUT
+Puede referenciarse con el numero 2, podemos redirigir los errores para no verlos de la siguiente manera
+whoam 2>/dev/null
+Para redirigir el stdout simplemente seria
+ls > /dev/null
+
+Para redirigir errores y la salida al /dev/null hacemos que los errores se conviertan en STDOUT
+ls > /dev/null 2>&1
+alternativa:
+ls &>/dev/null
+
+
+Segundo plano
+whireshark &>/dev/null &
+Nos da el PID que es el numero de identificador del proceso
+No quita que sea un proceso hijo de la consola, por lo que al cerrar la consola se termina el proceso
+Para hacer que sea independiente de algun proceso padre se agrega un disown
+whireshark &/dev/null & disown
+
+
+Permisos
+chmod # Cambia permisos
+    o # Otros
+    g # Grupos
+    u # Propietario
+    +rxw, -rwx
+    Ejemplo: chmod u-x,g-rx,o+w,o-x file
+
+    +t 1000 # Añade el sticky bit, si tenemos un archivo sin permisos de escritura en una carpeta con permisos de escritura, podemos borrar el archivo
+            # a menos que añadamos el sticky bit a la carpeta donde está el archivo
+
+    u+s 4000 # Agregar el permiso SUID, permite ejecutar como el propietario del archivo
+    g+s 2000 # Agrega el permiso GUID, permite ejecutar como miembro del grupo
+
+chgrp # Cambia grupo
+
+chown # Cambia propietario
+    chown usuario:grupo file # Asigna propietario y grupo a la vez
+
+lsattr # Muestra otros atributos especiales
+chattr # reasigna las flags especiales
+    +-i # inmutable, ni siquiera el usuario root lo puede borrar
+    -V # Aplicar verbose
+
+
+
+CAPABILITIES
+getcap -r / 2>/dev/null # Buscar las capabilities de forma recursiva desde la raíz
+setcap cap_setuid+ep /usr/bin/python3.9 # Agrega la capacidad de poder cambiar de uid
+setcap /usr/bin/python3.9 # Quita la capacidad de poder cambiar de uid
+
+
+USUARIOS
+useradd nombre # Crea un nuevo usuario
+    -s /bin/bash # Tipo de shell
+    -d /home/nombre # Asigna el directorio personal
+useradd pepe -s /bin/bash -d /home/pepe
+
+userdel nombre # Borrra un usuario
+
+passwd usuario # Asignar una contraseña
+
+groupadd nombreGrupo # Crea un nuevo grupo
+
+groupdel nombre # Borra un grupo
+
+usermod -a -G nombreGrupo Usuario

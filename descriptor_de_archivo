@@ -1,0 +1,16 @@
+exec 3<> file
+crea un descriptor de archivo con capacidad de lectura y escritura en un archivo llamado file
+
+whoami >&3
+Envia la salida del comando al archivo file
+
+exec 3>&-
+Cierra el descriptor de archivo
+
+exec 5<> file
+exec 8>&5
+lo que haya en el descriptor de archivo 5 lo quiero crear en una copia para el descriptor 8
+
+exec 5<> file
+exec 6>&5-
+Crea la copia y cierra el primero

@@ -1,0 +1,61 @@
+#!/bin/bash
+
+catnp /etc/group | grep "floppy" -n # filtra por la palabra dicha y da el numero de renglon con -n
+
+which python3.9 | xargs ls -l # Tratar el output, parelizando una secuencia de comandos
+
+hostname -I | awk '{print $1}' # Imprime argumentos separados por espacios
+hostname -I | cut -d ' ' -f 1 # Quedate con el primer campo usando el espacio como delimitador
+
+ip a | grep ens33 | tail -n # La ultima linea
+ip a | grep ens33 | awk 'NR==2' # Segundo renglon
+
+ip a | grep ens33 | awk 'NR==2' | awk '{print $1}' FS="/" # Usa / como delimitador
+
+
+echo -e # Permite caracteres especiales
+
+#Si metes filtros a un archivo, y tratas de meterlo al mismo archivo, hace que se vacie el archivo, 
+sponge archivo # Esto si permite aplicar cambios a un archivo y sobreescribir los cambios en el mismo archivo
+
+tee nombre # Muestra la salida en consola y crea un archivo con el nombre elegido donde se guarda lo que se mostró por consola
+
+awk '{print $1}' FS="*" # Toma el primer caracrer con el delimitador dado
+awk 'NF{print $NF}' # Hace referencia al ultimo argumento
+
+cut -d ' ' -f 1 # Se queda con el primer campo usando el espacio como delimitador
+
+rev # Voltea la cadena
+
+wc -l # Dice cuantas lineas tiene
+
+tr '/' ' ' # convierte las / en espacios
+tr -d ' ' # Borra los espacios
+tr '[A-Za-z]' '[N-ZA-Mn-za-m]' # Hace un ROT13
+
+sort # Ordena
+sort -u # Ordena y quita repetidos
+
+uniq -u # Listar lineas unicas
+
+base64 # Convierte en base64
+base64 -w 0 # Compacta todo en una sola linea
+echo 'Cadena en Base64' | base64 -d # Convierte de base64 a ASCII
+
+xxd # Convierte a Hexadecimal
+xxd -ps # Quita lo de la izquierda y la derecha y deja solo lo que esta en Hexadecimal
+xxd -ps -r # Revierte lo que está en Hexadecimal
+xxd -r # Revierte de igual manera un archivo en hexadecimal con toda la parte izquierda y derecha
+
+echo "obase=10; ibase=16; $numero" | bc # Convierte de hexadecimal a decimal
+
+sed 's/Texto1/Texto2/' # Cambia la primera palabra por la segunda y lo aplica solo a la primer palabra encontrada
+sed 's/Texto1/Texto2/g' # Cambia la primera palabra por la segunda y lo aplica a todas las primeras palabras en una misma linea
+
+grep "Texto" # Filtrar por donde salga la palabra Texto
+grep -r "\w" # Busca por una palabra de forma recursiva
+grep -v Texto # Quita todo lo que tenga la palabra Texto
+grep -vE "Texto1|Texto2" # Quita todo lo que tenga Texto1 y Texto2 y todo separado con un or
+
+xargs # Formatea el Texto
+xargs comando # Aplica el comando al output dado
