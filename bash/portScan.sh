@@ -2,6 +2,7 @@
 
 function ctrl_c(){
   echo -e "\n[+] Saliendo...\n"
+  tput cnorm
   exit 1 # Codigo estado erroneo
 }
 
