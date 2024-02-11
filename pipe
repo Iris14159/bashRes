@@ -51,6 +51,7 @@ echo "obase=10; ibase=16; $numero" | bc # Convierte de hexadecimal a decimal
 
 sed 's/Texto1/Texto2/' # Cambia la primera palabra por la segunda y lo aplica solo a la primer palabra encontrada
 sed 's/Texto1/Texto2/g' # Cambia la primera palabra por la segunda y lo aplica a todas las primeras palabras en una misma linea
+sed 's/$/./' # Agrega un "." al final del output
 
 grep "Texto" # Filtrar por donde salga la palabra Texto
 grep -r "\w" # Busca por una palabra de forma recursiva

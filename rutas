@@ -7,3 +7,5 @@ command -v whoami # Es una alternativa cuando el comando wich no existe
 /etc/shadow # Se ven contraseñas
 /etc/login.defs | grep "ENCRYPT_METHOD" # Dice con que metodo esta encriptada /etc/shadow 
 /proc/net/tcp # Se encuentran los puertos en hexadecimal
+/dev/tcp/127.0.0.1/$port # Un archivo para cada uno de los 65535 puertos, accesible en bash con errores en zsh. Al mandar
+                         # una cadena vacia, reporta un codigo de estado exitoso si el puerto esta abierto
