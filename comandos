@@ -1,4 +1,4 @@
-find / -type f -perm -4000 2>/dev/null # Quiero encontrar archivoz desde la raiz que tengan el permiso SUID
+find / -type f -perm -4000 2>/dev/null # Quiero encontrar archivos desde la raiz que tengan el permiso SUID
     -name    \*omb\*.sh # Busca nombre.sh
     -perm
     -user
@@ -18,6 +18,10 @@ netstat -nat # Ver puertos
 ss -nltp # Ver puertos
 
 lsof -i:22 # Que servicio corre bajo el puerto 22
+
+ps -faux # Nos dice los procesos que estan corriendo actualmente
+
+ps -eo command # Nos dice los comandos corriendo en el sistema
 
 file nombre # Dice el tipo de archivo
 
