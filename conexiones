@@ -26,3 +26,6 @@ nc IP PUERTO
 nc 127.0.0.1 30000
 
 ncat --ssl 127.0.0.1 30001 # Permite conexion con cifrado ssl
+
+# Podemos ponernos en escucha a traves de cualquier puerto de forma temporal
+nc -nlvp 4646 # Me pone en escucha a traves del puerto 4646. n quita resolucion DNS. l listen. v verbose. p puerto.

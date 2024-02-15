@@ -9,3 +9,6 @@ command -v whoami # Es una alternativa cuando el comando wich no existe
 /proc/net/tcp # Se encuentran los puertos en hexadecimal
 /dev/tcp/127.0.0.1/$port # Un archivo para cada uno de los 65535 puertos, accesible en bash con errores en zsh. Al mandar
                          # una cadena vacia, reporta un codigo de estado exitoso si el puerto esta abierto
+/tmp/ # Archivos temporales
+      mktemp -d # Crea un directorio temporal de trabajo
+/etc/cron.d # Ver configuraciones existentes de las tareas que se ejecutan en el sistema a intervalos regulares de tiempo 

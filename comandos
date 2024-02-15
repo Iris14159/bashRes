@@ -21,7 +21,7 @@ lsof -i:22 # Que servicio corre bajo el puerto 22
 
 ps -faux # Nos dice los procesos que estan corriendo actualmente
 
-ps -eo command # Nos dice los comandos corriendo en el sistema
+ps -eo command # Nos dice los comandos corriendo en el sistema a intervalos regulares de tiempo
 
 file nombre # Dice el tipo de archivo
 
@@ -29,3 +29,11 @@ strings archivo # Visualizar cadenas legibles en un archivo
 
 7z l archivo # Al pasar el archivo comprimido detecta que es lo que hay dentro y que vas a descomprimir
 7z x archivo # Extrae el contenido independientemente del tipo de comprimido
+
+mktemp -d # Crea un directorio temporal en la carpeta /tmp/
+
+bash -p # Para recibir una bash como el usuario con privilegio SUID
+sh
+
+ln -s -f ruta1 ruta2 # Crea un enlace simbolico
+rm -i ruta # Borra enlace simbolico

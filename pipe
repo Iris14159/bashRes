@@ -60,3 +60,7 @@ grep -vE "Texto1|Texto2" # Quita todo lo que tenga Texto1 y Texto2 y todo separa
 
 xargs # Formatea el Texto
 xargs comando # Aplica el comando al output dado
+
+diff archivo1 archivo2 # Dice las diferencias entre ambos archivos. < se quita. > se agrega
+
+md5sum # Regresa un hash, permite ver si los datos fueron manipulados o corrompidos 

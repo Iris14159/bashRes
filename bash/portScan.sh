@@ -18,3 +18,6 @@ done; wait # Espera a que los hilos finalicen
 
 # Mostrar cursor
 tput cnorm
+
+# Otra alternativa con nmap seria:
+# nmap --open T5 -v -n -p- 127.0.0.1
