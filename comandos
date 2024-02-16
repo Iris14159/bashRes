@@ -37,3 +37,8 @@ sh
 
 ln -s -f ruta1 ruta2 # Crea un enlace simbolico
 rm -i ruta # Borra enlace simbolico
+
+env # Muestra las variables de entorno
+
+tar -c # Empaquetar
+tar -x # Desempaquetar

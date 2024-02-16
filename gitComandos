@@ -1,0 +1,20 @@
+git clone {repositorio}
+
+git log # Muestra los commits con su identificador
+
+git show {identificador del log} # Muestra el cambio en el commit
+
+git checkout {identifiacdor del log} # Vuelve al momento del proyecto pasado
+
+git branch # Permite crear, enumerar y eliminar ramas asi como cambiar sus nombres.
+    -a # Ver las ramas
+
+git checkout {nombre de rama} # Lleva a otra rama
+
+git tag # Las tags son ramas inmutables, esto es lo que muestra
+
+git add -f archivo # Agrega un archivo concreto
+
+git commit -m 'mensaje' # Añadir un mensaje al archivo agregado
+
+git push -u origin master # Para subir el archivo agregado a la rama master que se muestra en git branch -a en la parte *master

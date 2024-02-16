@@ -53,6 +53,11 @@ chgrp # Cambia grupo
 chown # Cambia propietario
     chown usuario:grupo file # Asigna propietario y grupo a la vez
 
+
+# Añadir a un usuario a un grupo
+usermod -a -G grupo usuario 
+
+
 lsattr # Muestra otros atributos especiales
 chattr # reasigna las flags especiales
     +-i # inmutable, ni siquiera el usuario root lo puede borrar

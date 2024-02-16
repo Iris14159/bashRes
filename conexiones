@@ -18,7 +18,7 @@ cp id_rsa.pub authorized_keys # Si la clave publica se hace autorizada al tratar
 # Clave privada
 ssh-copy-id -i id_rsa usuario@127.0.0.1 # Hace que la clave privada se haga autorizada
 # La clave privada la compartes con quien quieres que se conecte
-ssh -i id_rsa usuario@127.0.0.1 # De esa forma con la key privada que recibió es como el usuario se conecta
+ssh -i id_rsa usuario@127.0.0.1 # De esa forma con la key privada que recibió es como el usuario se conecta, i es clave de identidad
 
 NETCAT
 # Permite conectarte a traves de un puerto
@@ -29,3 +29,7 @@ ncat --ssl 127.0.0.1 30001 # Permite conexion con cifrado ssl
 
 # Podemos ponernos en escucha a traves de cualquier puerto de forma temporal
 nc -nlvp 4646 # Me pone en escucha a traves del puerto 4646. n quita resolucion DNS. l listen. v verbose. p puerto.
+
+# Podemos hacer fuerza bruta en netcat
+# Ejemplo: Mandar por el puerto una contraseña con todas las combinaciones posibles de 0000 en un archivo
+cat archivo.txt | nc 127.0.0.1 30002 | grep -vE "Wrong|Please enter"

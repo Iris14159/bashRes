@@ -12,6 +12,10 @@ ip a | grep ens33 | awk 'NR==2' # Segundo renglon
 
 ip a | grep ens33 | awk 'NR==2' | awk '{print $1}' FS="/" # Usa / como delimitador
 
+head -n 1 # Muestra el primer renglon
+head -c 1 # Muestra el primer caracter
+
+tail -n 1 # Muestra el ultimo caracter
 
 echo -e # Permite caracteres especiales
 
@@ -56,7 +60,7 @@ sed 's/$/./' # Agrega un "." al final del output
 grep "Texto" # Filtrar por donde salga la palabra Texto
 grep -r "\w" # Busca por una palabra de forma recursiva
 grep -v Texto # Quita todo lo que tenga la palabra Texto
-grep -vE "Texto1|Texto2" # Quita todo lo que tenga Texto1 y Texto2 y todo separado con un or
+grep -vE "Texto1|Texto2" # Quita todo lo que tenga Texto1 y Texto2 y todo separado con un or, la v es quitar y la E multiples cadenas
 
 xargs # Formatea el Texto
 xargs comando # Aplica el comando al output dado
@@ -64,3 +68,7 @@ xargs comando # Aplica el comando al output dado
 diff archivo1 archivo2 # Dice las diferencias entre ambos archivos. < se quita. > se agrega
 
 md5sum # Regresa un hash, permite ver si los datos fueron manipulados o corrompidos 
+
+less # Muestra en formato paginado de arriba hacia abajo
+
+more # Igual que less pero cambia el formato de acuerdo al tamaño de la pantalla

@@ -1,6 +1,11 @@
 wich whoami
 command -v whoami # Es una alternativa cuando el comando wich no existe
 
+/lib # Tiene las librerias compartidas y modulos del kernel
+/var # Contiene archivos administrativos y datos que cambian con frecuencia (registro de errores, bases de datos, colas de impresion...)
+/sbin # Contiene los ficheros binarios ejecutables del sistema operativo
+/proc # Se utiliza para almacenar datos del kernel e informacion sobre procesos
+
 /etc/group # Aqui se encuentran todos los grupos que se reportan cuando haces "id" en la terminal
 /etc/passwd # Lista usuarios, directorio personal, tipo de shell
 /etc/shells # Se ven los tipos de shells
